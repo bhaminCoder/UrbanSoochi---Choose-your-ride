@@ -22,21 +22,21 @@ class CitiesListViewModelTests: XCTestCase {
         self.viewModel = CitiesListViewModel()
 
         let cities = self.viewModel?.decodeCitiesData(data: (self.mockRequest?.data())!)
-        self.viewModel?.countriesAndCities = self.viewModel?.groupCitiesData(cities!)
+        self.viewModel?.citiesGroupedByCountries = self.viewModel?.groupCitiesData(cities!)
     }
 
     override func tearDown() {
         self.mockRequest = nil
         self.mockInvalidRequest = nil
         self.viewModel = nil
-        self.viewModel?.countriesAndCities = nil
+        self.viewModel?.citiesGroupedByCountries = nil
         super.tearDown()
     }
 
     func testForGetListOfCitiesForSuccessfulCompletion() {
         self.viewModel?.getListOfCities(request: self.mockRequest!, completion: { (success, error) in
             XCTAssertTrue(success)
-            XCTAssertNotNil(self.viewModel?.countriesAndCities?.citiesGroupedByCountry)
+            XCTAssertNotNil(self.viewModel?.citiesGroupedByCountries?.groupedCountriesAndCitiesGrouped)
             XCTAssertNil(error)
         })
     }
@@ -64,10 +64,10 @@ class CitiesListViewModelTests: XCTestCase {
 
     func testGroupedCitiesData() {
         let cities = self.viewModel?.decodeCitiesData(data: self.mockRequest!.data()!)
-        let countriesAndCities = self.viewModel?.groupCitiesData(cities!)
+        let citiesGroupedByCountries = self.viewModel?.groupCitiesData(cities!)
 
-        let mockGroupedCitiesAndCountries = countriesAndCities?.cities.sortedByName.groupedByCountry
-        let citiesWithCountry = countriesAndCities?.citiesGroupedByCountry
+        let mockGroupedCitiesAndCountries = citiesGroupedByCountries?.cities.sortedByName.groupedByCountry
+        let citiesWithCountry = citiesGroupedByCountries?.groupedCountriesAndCitiesGrouped
 
         XCTAssertNotNil(mockGroupedCitiesAndCountries)
         XCTAssertNotNil(citiesWithCountry)
@@ -83,55 +83,55 @@ class CitiesListViewModelTests: XCTestCase {
     }
 
     func testForFilterForSearchKeyWithCityName() {
-        let countriesAndCities = self.viewModel?.filterForSearchKey("Lon")
-        XCTAssertNotNil(countriesAndCities)
-        let filteredCity = countriesAndCities?.cities[0]
-        XCTAssertTrue(countriesAndCities?.cities.count == 1)
+        let citiesGroupedByCountries = self.viewModel?.filterForSearchKey("Lon")
+        XCTAssertNotNil(citiesGroupedByCountries)
+        let filteredCity = citiesGroupedByCountries?.cities[0]
+        XCTAssertTrue(citiesGroupedByCountries?.cities.count == 1)
         XCTAssertEqual(filteredCity!.name, "London")
     }
 
     func testForFilterForSearchKeyWithCountryName() {
-        let countriesAndCities = self.viewModel?.filterForSearchKey("Stat")
-        XCTAssertNotNil(countriesAndCities)
-        let filteredCountry = countriesAndCities?.countryNames.first
+        let citiesGroupedByCountries = self.viewModel?.filterForSearchKey("Stat")
+        XCTAssertNotNil(citiesGroupedByCountries)
+        let filteredCountry = citiesGroupedByCountries?.countryNames.first
         XCTAssertEqual(filteredCountry, "United States")
     }
 
     func testForFilterForSearchKeyForInvalidKey() {
-        let countriesAndCities = self.viewModel?.filterForSearchKey("oops")
-        XCTAssertNil(countriesAndCities)
+        let citiesGroupedByCountries = self.viewModel?.filterForSearchKey("oops")
+        XCTAssertNil(citiesGroupedByCountries)
     }
 
     func testForFilterBasedOnCityNamesIfExistsForValidCity() {
-        let countriesAndCities = self.viewModel?.filterBasedOnCityNamesIfExists(forKey: "york")
-        let filteredCity = countriesAndCities?.cities.first
+        let citiesGroupedByCountries = self.viewModel?.filterBasedOnCityNamesIfExists(forKey: "york")
+        let filteredCity = citiesGroupedByCountries?.cities.first
         XCTAssertEqual(filteredCity?.name, "New York")
     }
 
     func testForFilterBasedOnCityNamesIfExistsForInValidCity() {
-        let countriesAndCities = self.viewModel?.filterBasedOnCityNamesIfExists(forKey: "xyz")
-        let filteredCity = countriesAndCities?.cities.first
+        let citiesGroupedByCountries = self.viewModel?.filterBasedOnCityNamesIfExists(forKey: "xyz")
+        let filteredCity = citiesGroupedByCountries?.cities.first
         XCTAssertNil(filteredCity)
     }
 
     func testForFilterBasedOnCountryNamesIfExistsForValidName() {
-        let countriesAndCities = self.viewModel?.filterBasedOnCountryNameIfExists(forKey: "land")
-        XCTAssertTrue(countriesAndCities?.countryNames.count == 2)
-        let england = countriesAndCities?.countryNames[0]
-        let netherlands = countriesAndCities?.countryNames[1]
+        let citiesGroupedByCountries = self.viewModel?.filterBasedOnCountryNameIfExists(forKey: "land")
+        XCTAssertTrue(citiesGroupedByCountries?.countryNames.count == 2)
+        let england = citiesGroupedByCountries?.countryNames[0]
+        let netherlands = citiesGroupedByCountries?.countryNames[1]
         XCTAssertEqual(england, "England")
         XCTAssertEqual(netherlands, "Netherlands")
     }
 
     func testForFilterBasedOnCountryNamesIfExistsForInValidName() {
-        let countriesAndCities = self.viewModel?.filterBasedOnCountryNameIfExists(forKey: "NaCl")
-        XCTAssertNil(countriesAndCities)
-        XCTAssertNil(countriesAndCities?.countryNames)
+        let citiesGroupedByCountries = self.viewModel?.filterBasedOnCountryNameIfExists(forKey: "NaCl")
+        XCTAssertNil(citiesGroupedByCountries)
+        XCTAssertNil(citiesGroupedByCountries?.countryNames)
     }
 }
 
 class MockInvalidRequest: CityListRequest {
-    typealias ModelType = CitiesAPIData
+    typealias ModelType = CountriesAndCitiesGrouped
 
     override func baseUrl() -> String {
         return "1234ndjbsk"

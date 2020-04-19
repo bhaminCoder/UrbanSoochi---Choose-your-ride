@@ -43,16 +43,12 @@ class APIRequestManagetTests: XCTestCase {
     }
 
     func toDecodedModelData() {
-        let cities = APIRequestManager.toDecodedModelData((self.mockRequest?.data())!, modelType: CitiesAPIData.self)
+        let cities = APIRequestManager.toDecodedModelData((self.mockRequest?.data())!, modelType: Cities.self)
         XCTAssertNotNil(cities)
         XCTAssertNotNil(cities?.cities)
-        XCTAssertNotNil(cities?.countriesList)
 
         let city = cities?.cities?.first
         XCTAssertEqual(city!.name, "Sydney")
-
-        let country = cities?.countriesList?.first
-        XCTAssertEqual(country!, "United States")
     }
 
     func testForURLRequestInit() {
