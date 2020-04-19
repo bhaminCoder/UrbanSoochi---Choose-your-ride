@@ -16,7 +16,7 @@ class CitiesListViewController: UIViewController {
     let cellIdentifier = "CellId"
 
     var viewModel = CitiesListViewModel()
-    var countriesAndCities: CountriesAndCities? {
+    var citiesGroupedByCountries: CountriesAndCitiesGrouped? {
         didSet {
             self.cityListTableView.reloadData()
         }
@@ -56,8 +56,8 @@ class CitiesListViewController: UIViewController {
 
     //Updates the data source to reload the table view
     private func updateView() {
-        if let countriesAndCities = self.viewModel.countriesAndCities {
-            self.countriesAndCities = countriesAndCities
+        if let citiesGroupedByCountries = self.viewModel.citiesGroupedByCountries {
+            self.citiesGroupedByCountries = citiesGroupedByCountries
         } else {
             self.handleError(.noData)
         }
@@ -78,12 +78,12 @@ class CitiesListViewController: UIViewController {
 
     //Initiates a search for an entered text to filter the data and updates the view
     private func beginSearch(forKey searchKey: String) {
-        guard let filteredCountriesAndCities = self.viewModel.filterForSearchKey(searchKey) else {
+        guard let filteredCountriesAndCitiesGrouped = self.viewModel.filterForSearchKey(searchKey) else {
             //If the search key is not found reload the view
             self.updateView()
             return
         }
-        self.countriesAndCities = filteredCountriesAndCities
+        self.citiesGroupedByCountries = filteredCountriesAndCitiesGrouped
     }
 }
 
@@ -135,27 +135,27 @@ extension CitiesListViewController: UISearchBarDelegate {
 extension CitiesListViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let countriesAndCities = self.countriesAndCities else {
+        guard let citiesGroupedByCountries = self.citiesGroupedByCountries else {
             return 0
         }
-        return countriesAndCities.countryNames.count
+        return citiesGroupedByCountries.countryNames.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let countriesAndCities = self.countriesAndCities else {
+        guard let citiesGroupedByCountries = self.citiesGroupedByCountries else {
             return 0
         }
-        let countries = countriesAndCities.countryNames
+        let countries = citiesGroupedByCountries.countryNames
         let country = countries[section]
-        let cities = countriesAndCities.citiesGroupedByCountry[country]
+        let cities = citiesGroupedByCountries.groupedCountriesAndCitiesGrouped[country]
         return cities?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      guard let countriesAndCities = self.countriesAndCities else {
+      guard let citiesGroupedByCountries = self.citiesGroupedByCountries else {
            return nil
        }
-       return countriesAndCities.countryNames[section]
+       return citiesGroupedByCountries.countryNames[section]
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -163,9 +163,9 @@ extension CitiesListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        if let countriesAndCities = self.countriesAndCities {
-            let country = countriesAndCities.countryNames[indexPath.section]
-            let cities = countriesAndCities.citiesGroupedByCountry[country]
+        if let citiesGroupedByCountries = self.citiesGroupedByCountries {
+            let country = citiesGroupedByCountries.countryNames[indexPath.section]
+            let cities = citiesGroupedByCountries.groupedCountriesAndCitiesGrouped[country]
             if let cities = cities {
                 cell.textLabel?.text = cities[indexPath.row].name
             }

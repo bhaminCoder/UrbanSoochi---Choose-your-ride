@@ -34,8 +34,8 @@ class Extensions_Tests: XCTestCase {
     }
 
     func testForGroupSequence() {
-        let newYorkCity = City(name: "New York", country: "USA", latitude: 68.11, longitude: 223.22, temperature: 25.0)
-        let bengaluruCity = City(name: "Bengaluru", country: "INDIA", latitude: 53.22, longitude: 87.22, temperature: 22.0)
+        let newYorkCity = City(name: "New York", country: "USA")
+        let bengaluruCity = City(name: "Bengaluru", country: "INDIA")
         let cities = [newYorkCity, bengaluruCity]
         let groupedCitiesByCountry = cities.group(by: {$0.country})
         XCTAssertNotNil(groupedCitiesByCountry)

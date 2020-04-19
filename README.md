@@ -22,6 +22,6 @@
   2. A `Countries` collection from the json/api is not considered, because it does not have any related between `cities` and `countries` collection under the json/api.
 
 >Things that can be improved:
-1. Functional unit test coverage is approx 90% as of now which can still be improved.
+1. Test coverage is approx 75% (of which functional is >90%)
 >>> Note: Contains tests for functional part not for UI tests.
-2. Code structuring can be improved as per one's understanding
+2. WRT data structre, a group of `[Country]` and `[City]` is considered instead of `[String:[String]]`, which does not make much difference in terms of filtering or mapping the data.

@@ -34,7 +34,7 @@ class APIRequestTests: XCTestCase {
 
 extension APIRequestTests: APIRequest {
 
-    typealias ModelType = CitiesAPIData
+    typealias ModelType = Cities
 
     func baseUrl() -> String {
         return "baseUrl"

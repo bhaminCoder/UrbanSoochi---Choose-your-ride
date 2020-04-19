@@ -10,7 +10,7 @@ import Foundation
 
 class CityListRequest: APIRequest {
 
-    typealias ModelType = CitiesAPIData
+    typealias ModelType = Cities
 
     func baseUrl() -> String {
         return "https://jsonblob.com/api/173183a3-47f2-11ea-a44d-635fc7abe276"

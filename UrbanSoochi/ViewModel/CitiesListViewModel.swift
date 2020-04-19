@@ -12,16 +12,16 @@ let allowedContactFieldCharacterSet = CharacterSet(charactersIn: "abcdefghijklmn
 
 class CitiesListViewModel {
 
-    var countriesAndCities: CountriesAndCities?
+    var citiesGroupedByCountries: CountriesAndCitiesGrouped?
 
-    // Makes an API call with `CityListRequest` object to get a structured group of countriesAndCities
+    // Makes an API call with `CityListRequest` object to get a structured group of citiesGroupedByCountries
     // Else, throws an error if fails
     func getListOfCities(request: CityListRequest = CityListRequest(),
                                 completion: @escaping (_ success: Bool, _ error: NetworkError?) -> Void) {
         APIRequestManager.executeAPIRequest(request) { (data, error) in
             if let data = data,
                 let cities = self.decodeCitiesData(data: data) {
-                self.countriesAndCities = self.groupCitiesData(cities)
+                self.citiesGroupedByCountries = self.groupCitiesData(cities)
                 completion(true, nil)
             }
 
@@ -31,9 +31,9 @@ class CitiesListViewModel {
         }
     }
 
-    //Decodes the API data with respective model type i.e., `CitiesAPIData`
+    //Decodes the API data with respective model type i.e., `CountriesAndCitiesGrouped`
     func decodeCitiesData(data: Data) -> [City]? {
-        guard let cityListData = APIRequestManager.toDecodedModelData(data, modelType: CitiesAPIData.self),
+        guard let cityListData = APIRequestManager.toDecodedModelData(data, modelType: Cities.self),
             let cities = cityListData.cities else { return nil }
         return cities
     }
@@ -48,13 +48,13 @@ class CitiesListViewModel {
         return validCities.sortedByName
     }
 
-    //Groups list of cities with country names and updates the `CountriesAndCities` datasource
-    func groupCitiesData(_ cities: [City]) -> CountriesAndCities? {
+    //Groups list of cities with country names and updates the `CountriesAndCitiesGrouped` datasource
+    func groupCitiesData(_ cities: [City]) -> CountriesAndCitiesGrouped? {
         if !cities.isEmpty {
             let citiesSorted = self.validSortedCities(cities)
             let countryNames = citiesSorted.groupedByCountry.sortedKeyPaths
-            return CountriesAndCities(cities: citiesSorted, countryNames: countryNames,
-                                                citiesGroupedByCountry: citiesSorted.groupedByCountry)
+            return CountriesAndCitiesGrouped(cities: citiesSorted, countryNames: countryNames,
+                                                groupedCountriesAndCitiesGrouped: citiesSorted.groupedByCountry)
         }
         return nil
     }
@@ -68,7 +68,7 @@ class CitiesListViewModel {
 
     //Filters for cities and countries based on given serachKey if either of which exists
     // Else returns nil
-    func filterForSearchKey(_ key: String) -> CountriesAndCities? {
+    func filterForSearchKey(_ key: String) -> CountriesAndCitiesGrouped? {
          if let filteredByCities = self.filterBasedOnCityNamesIfExists(forKey: key) {
              return filteredByCities
          } else {
@@ -76,11 +76,11 @@ class CitiesListViewModel {
          }
     }
 
-    func filterBasedOnCityNamesIfExists(forKey searchKey: String) -> CountriesAndCities? {
+    func filterBasedOnCityNamesIfExists(forKey searchKey: String) -> CountriesAndCitiesGrouped? {
 
-        guard let countriesAndCities = self.countriesAndCities else { return nil }
+        guard let citiesGroupedByCountries = self.citiesGroupedByCountries else { return nil }
 
-        let cities = countriesAndCities.cities
+        let cities = citiesGroupedByCountries.cities
         let cityNames = cities.compactMap({$0.name})
 
         let filteredCityNames = self.matchingCollectionForKey(searchKey, data: cityNames)
@@ -93,18 +93,18 @@ class CitiesListViewModel {
         return nil
     }
 
-    func filterBasedOnCountryNameIfExists(forKey searchKey: String) -> CountriesAndCities? {
-        guard let countriesAndCities = self.countriesAndCities else { return nil}
+    func filterBasedOnCountryNameIfExists(forKey searchKey: String) -> CountriesAndCitiesGrouped? {
+        guard let citiesGroupedByCountries = self.citiesGroupedByCountries else { return nil}
 
-        let citiesGroupedByCountryFiltered = countriesAndCities.citiesGroupedByCountry.filter({
+        let groupedCountriesAndCitiesGroupedFiltered = citiesGroupedByCountries.groupedCountriesAndCitiesGrouped.filter({
             (countryName, _) in
             return searchKey.isASubSetOf(givenText: countryName)
         })
 
-        guard !citiesGroupedByCountryFiltered.isEmpty else { return nil }
-        return CountriesAndCities(cities: countriesAndCities.cities,
-                                   countryNames: citiesGroupedByCountryFiltered.sortedKeyPaths,
-                              citiesGroupedByCountry: citiesGroupedByCountryFiltered)
+        guard !groupedCountriesAndCitiesGroupedFiltered.isEmpty else { return nil }
+        return CountriesAndCitiesGrouped(cities: citiesGroupedByCountries.cities,
+                                   countryNames: groupedCountriesAndCitiesGroupedFiltered.sortedKeyPaths,
+                              groupedCountriesAndCitiesGrouped: groupedCountriesAndCitiesGroupedFiltered)
     }
 }
 
