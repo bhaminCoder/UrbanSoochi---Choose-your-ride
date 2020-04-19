@@ -14,6 +14,8 @@ class CitiesListViewModel {
 
     var countriesAndCities: CountriesAndCities?
 
+    // Makes an API call with `CityListRequest` object to get a structured group of countriesAndCities
+    // Else, throws an error if fails
     func getListOfCities(request: CityListRequest = CityListRequest(),
                                 completion: @escaping (_ success: Bool, _ error: NetworkError?) -> Void) {
         APIRequestManager.executeAPIRequest(request) { (data, error) in
@@ -29,6 +31,7 @@ class CitiesListViewModel {
         }
     }
 
+    //Decodes the API data with respective model type i.e., `CitiesAPIData`
     func decodeCitiesData(data: Data) -> [City]? {
         guard let cityListData = APIRequestManager.toDecodedModelData(data, modelType: CitiesAPIData.self),
             let cities = cityListData.cities else { return nil }
@@ -45,6 +48,7 @@ class CitiesListViewModel {
         return validCities.sortedByName
     }
 
+    //Groups list of cities with country names and updates the `CountriesAndCities` datasource
     func groupCitiesData(_ cities: [City]) -> CountriesAndCities? {
         if !cities.isEmpty {
             let citiesSorted = self.validSortedCities(cities)
@@ -55,12 +59,15 @@ class CitiesListViewModel {
         return nil
     }
 
+    //Returns a collection of matching items if matches with the given searchKey
     func matchingCollectionForKey(_ key: String, data: [String]) -> [String] {
         return data.filter { (text) -> Bool in
             return key.isASubSetOf(givenText: text)
         }
     }
 
+    //Filters for cities and countries based on given serachKey if either of which exists
+    // Else returns nil
     func filterForSearchKey(_ key: String) -> CountriesAndCities? {
          if let filteredByCities = self.filterBasedOnCityNamesIfExists(forKey: key) {
              return filteredByCities

@@ -22,6 +22,8 @@ class CitiesListViewController: UIViewController {
         }
     }
 
+    // MARK: - View life cycle methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
@@ -41,14 +43,6 @@ class CitiesListViewController: UIViewController {
         }
     }
 
-    private func updateView() {
-        if let countriesAndCities = self.viewModel.countriesAndCities {
-            self.countriesAndCities = countriesAndCities
-        } else {
-            self.handleError(.noData)
-        }
-    }
-
     private func setUpView() {
         self.cityListTableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         self.cityListTableView.dataSource = self
@@ -56,6 +50,17 @@ class CitiesListViewController: UIViewController {
         self.cityListTableView.allowsSelection = false
 
         self.citySearchBar.delegate = self
+    }
+
+    // MARK: - Helper methods
+
+    //Updates the data source to reload the table view
+    private func updateView() {
+        if let countriesAndCities = self.viewModel.countriesAndCities {
+            self.countriesAndCities = countriesAndCities
+        } else {
+            self.handleError(.noData)
+        }
     }
 
     //Handles the error by displaying an alert with suitable message
@@ -71,6 +76,7 @@ class CitiesListViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    //Initiates a search for an entered text to filter the data and updates the view
     private func beginSearch(forKey searchKey: String) {
         guard let filteredCountriesAndCities = self.viewModel.filterForSearchKey(searchKey) else {
             //If the search key is not found reload the view
@@ -80,6 +86,8 @@ class CitiesListViewController: UIViewController {
         self.countriesAndCities = filteredCountriesAndCities
     }
 }
+
+// MARK: - UISearchBarDelegate methods
 
 extension CitiesListViewController: UISearchBarDelegate {
 

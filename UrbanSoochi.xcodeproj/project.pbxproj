@@ -79,6 +79,7 @@
 		3DD133FB244C50350067182D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3DD133FF244C50F10067182D /* Extensions+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Tests.swift"; sourceTree = "<group>"; };
 		3DD13401244C713B0067182D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3DD13403244C7C730067182D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3DF5683B244B6BA9005A711B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkErrorTests.swift; path = "../Network Manager/NetworkErrorTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +112,7 @@
 		3DCD67FA244867ED00F55D3E = {
 			isa = PBXGroup;
 			children = (
+				3DD13403244C7C730067182D /* README.md */,
 				3DCD6805244867ED00F55D3E /* UrbanSoochi */,
 				3DCD681C244867EE00F55D3E /* UrbanSoochiTests */,
 				3DCD6827244867EE00F55D3E /* UrbanSoochiUITests */,
