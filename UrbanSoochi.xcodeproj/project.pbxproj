@@ -9,12 +9,28 @@
 /* Begin PBXBuildFile section */
 		3DCD6807244867ED00F55D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD6806244867ED00F55D3E /* AppDelegate.swift */; };
 		3DCD6809244867ED00F55D3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD6808244867ED00F55D3E /* SceneDelegate.swift */; };
-		3DCD680B244867ED00F55D3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD680A244867ED00F55D3E /* ViewController.swift */; };
 		3DCD680E244867ED00F55D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCD680C244867ED00F55D3E /* Main.storyboard */; };
 		3DCD6810244867EE00F55D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCD680F244867EE00F55D3E /* Assets.xcassets */; };
 		3DCD6813244867EE00F55D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCD6811244867EE00F55D3E /* LaunchScreen.storyboard */; };
 		3DCD681E244867EE00F55D3E /* UrbanSoochiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD681D244867EE00F55D3E /* UrbanSoochiTests.swift */; };
 		3DCD6829244867EE00F55D3E /* UrbanSoochiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD6828244867EE00F55D3E /* UrbanSoochiUITests.swift */; };
+		3DCD683F24486A1800F55D3E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD683E24486A1800F55D3E /* APIRequest.swift */; };
+		3DCD684124486A2300F55D3E /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD684024486A2300F55D3E /* APIRequestManager.swift */; };
+		3DCD684324486A6C00F55D3E /* ListOfCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DCD684224486A6C00F55D3E /* ListOfCities.json */; };
+		3DCD684524486A9C00F55D3E /* CitiesAndCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD684424486A9C00F55D3E /* CitiesAndCountries.swift */; };
+		3DCD684724486E2B00F55D3E /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD684624486E2B00F55D3E /* CitiesListViewController.swift */; };
+		3DCD684924486E5300F55D3E /* CityListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD684824486E5300F55D3E /* CityListRequest.swift */; };
+		3DCD684B24486ECA00F55D3E /* CitiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD684A24486ECA00F55D3E /* CitiesListViewModel.swift */; };
+		3DCD68632449BCF700F55D3E /* APIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD68622449BCF700F55D3E /* APIRequestTests.swift */; };
+		3DCD68652449BD0F00F55D3E /* APIRequestManagetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD68642449BD0F00F55D3E /* APIRequestManagetTests.swift */; };
+		3DCD68682449BD2F00F55D3E /* CityListRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD68672449BD2F00F55D3E /* CityListRequestTests.swift */; };
+		3DCD686C2449BD4F00F55D3E /* CitiesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD686B2449BD4F00F55D3E /* CitiesListViewModelTests.swift */; };
+		3DCD686E2449CC4200F55D3E /* MockCityListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD686D2449CC4200F55D3E /* MockCityListRequest.swift */; };
+		3DD133FC244C50350067182D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD133FB244C50350067182D /* Extensions.swift */; };
+		3DD13400244C50F10067182D /* Extensions+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD133FF244C50F10067182D /* Extensions+Tests.swift */; };
+		3DD13402244C713B0067182D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD13401244C713B0067182D /* City.swift */; };
+		3DF5683C244B6BA9005A711B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5683B244B6BA9005A711B /* NetworkError.swift */; };
+		3DF5683E244B6F8D005A711B /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +54,6 @@
 		3DCD6803244867ED00F55D3E /* UrbanSoochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSoochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCD6806244867ED00F55D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DCD6808244867ED00F55D3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DCD680A244867ED00F55D3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DCD680D244867ED00F55D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DCD680F244867EE00F55D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DCD6812244867EE00F55D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +64,23 @@
 		3DCD6824244867EE00F55D3E /* UrbanSoochiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrbanSoochiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCD6828244867EE00F55D3E /* UrbanSoochiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanSoochiUITests.swift; sourceTree = "<group>"; };
 		3DCD682A244867EE00F55D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DCD683E24486A1800F55D3E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		3DCD684024486A2300F55D3E /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		3DCD684224486A6C00F55D3E /* ListOfCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListOfCities.json; sourceTree = "<group>"; };
+		3DCD684424486A9C00F55D3E /* CitiesAndCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesAndCountries.swift; sourceTree = "<group>"; };
+		3DCD684624486E2B00F55D3E /* CitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
+		3DCD684824486E5300F55D3E /* CityListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListRequest.swift; sourceTree = "<group>"; };
+		3DCD684A24486ECA00F55D3E /* CitiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewModel.swift; sourceTree = "<group>"; };
+		3DCD68622449BCF700F55D3E /* APIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestTests.swift; sourceTree = "<group>"; };
+		3DCD68642449BD0F00F55D3E /* APIRequestManagetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagetTests.swift; sourceTree = "<group>"; };
+		3DCD68672449BD2F00F55D3E /* CityListRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListRequestTests.swift; sourceTree = "<group>"; };
+		3DCD686B2449BD4F00F55D3E /* CitiesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewModelTests.swift; sourceTree = "<group>"; };
+		3DCD686D2449CC4200F55D3E /* MockCityListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCityListRequest.swift; sourceTree = "<group>"; };
+		3DD133FB244C50350067182D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3DD133FF244C50F10067182D /* Extensions+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Tests.swift"; sourceTree = "<group>"; };
+		3DD13401244C713B0067182D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3DF5683B244B6BA9005A711B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkErrorTests.swift; path = "../Network Manager/NetworkErrorTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +131,15 @@
 		3DCD6805244867ED00F55D3E /* UrbanSoochi */ = {
 			isa = PBXGroup;
 			children = (
+				3DCD68382448681600F55D3E /* Model */,
+				3DCD683A2448682400F55D3E /* View */,
+				3DCD68392448681F00F55D3E /* ViewModel */,
+				3DCD683B2448682800F55D3E /* Request */,
+				3DCD68372448680E00F55D3E /* Utilities */,
+				3DCD68362448680500F55D3E /* Network Manager */,
+				3DCD683C2448683900F55D3E /* Resources */,
 				3DCD6806244867ED00F55D3E /* AppDelegate.swift */,
 				3DCD6808244867ED00F55D3E /* SceneDelegate.swift */,
-				3DCD680A244867ED00F55D3E /* ViewController.swift */,
-				3DCD680C244867ED00F55D3E /* Main.storyboard */,
-				3DCD680F244867EE00F55D3E /* Assets.xcassets */,
-				3DCD6811244867EE00F55D3E /* LaunchScreen.storyboard */,
-				3DCD6814244867EE00F55D3E /* Info.plist */,
 			);
 			path = UrbanSoochi;
 			sourceTree = "<group>";
@@ -113,6 +147,10 @@
 		3DCD681C244867EE00F55D3E /* UrbanSoochiTests */ = {
 			isa = PBXGroup;
 			children = (
+				3DCD68612449BCE200F55D3E /* ViewModel */,
+				3DCD685F2449BCD700F55D3E /* Request */,
+				3DF56838244B4DC7005A711B /* Utilities */,
+				3DCD685E2449BCCB00F55D3E /* Network Manager */,
 				3DCD681D244867EE00F55D3E /* UrbanSoochiTests.swift */,
 				3DCD681F244867EE00F55D3E /* Info.plist */,
 			);
@@ -128,6 +166,104 @@
 			path = UrbanSoochiUITests;
 			sourceTree = "<group>";
 		};
+		3DCD68362448680500F55D3E /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD683E24486A1800F55D3E /* APIRequest.swift */,
+				3DCD684024486A2300F55D3E /* APIRequestManager.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		3DCD68372448680E00F55D3E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3DF5683B244B6BA9005A711B /* NetworkError.swift */,
+				3DD133FB244C50350067182D /* Extensions.swift */,
+				3DCD684224486A6C00F55D3E /* ListOfCities.json */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3DCD68382448681600F55D3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD684424486A9C00F55D3E /* CitiesAndCountries.swift */,
+				3DD13401244C713B0067182D /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DCD68392448681F00F55D3E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD684A24486ECA00F55D3E /* CitiesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DCD683A2448682400F55D3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD684624486E2B00F55D3E /* CitiesListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DCD683B2448682800F55D3E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD684824486E5300F55D3E /* CityListRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		3DCD683C2448683900F55D3E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD680C244867ED00F55D3E /* Main.storyboard */,
+				3DCD680F244867EE00F55D3E /* Assets.xcassets */,
+				3DCD6811244867EE00F55D3E /* LaunchScreen.storyboard */,
+				3DCD6814244867EE00F55D3E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3DCD685E2449BCCB00F55D3E /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD68622449BCF700F55D3E /* APIRequestTests.swift */,
+				3DCD68642449BD0F00F55D3E /* APIRequestManagetTests.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		3DCD685F2449BCD700F55D3E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD68672449BD2F00F55D3E /* CityListRequestTests.swift */,
+				3DCD686D2449CC4200F55D3E /* MockCityListRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		3DCD68612449BCE200F55D3E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD686B2449BD4F00F55D3E /* CitiesListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DF56838244B4DC7005A711B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */,
+				3DD133FF244C50F10067182D /* Extensions+Tests.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +274,7 @@
 				3DCD67FF244867ED00F55D3E /* Sources */,
 				3DCD6800244867ED00F55D3E /* Frameworks */,
 				3DCD6801244867ED00F55D3E /* Resources */,
+				3DCD684C244870E100F55D3E /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -235,6 +372,7 @@
 				3DCD6813244867EE00F55D3E /* LaunchScreen.storyboard in Resources */,
 				3DCD6810244867EE00F55D3E /* Assets.xcassets in Resources */,
 				3DCD680E244867ED00F55D3E /* Main.storyboard in Resources */,
+				3DCD684324486A6C00F55D3E /* ListOfCities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +392,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DCD684C244870E100F55D3E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DCD67FF244867ED00F55D3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DCD680B244867ED00F55D3E /* ViewController.swift in Sources */,
+				3DCD684524486A9C00F55D3E /* CitiesAndCountries.swift in Sources */,
+				3DCD684724486E2B00F55D3E /* CitiesListViewController.swift in Sources */,
 				3DCD6807244867ED00F55D3E /* AppDelegate.swift in Sources */,
+				3DF5683C244B6BA9005A711B /* NetworkError.swift in Sources */,
+				3DCD684124486A2300F55D3E /* APIRequestManager.swift in Sources */,
+				3DD133FC244C50350067182D /* Extensions.swift in Sources */,
+				3DCD683F24486A1800F55D3E /* APIRequest.swift in Sources */,
+				3DD13402244C713B0067182D /* City.swift in Sources */,
+				3DCD684924486E5300F55D3E /* CityListRequest.swift in Sources */,
 				3DCD6809244867ED00F55D3E /* SceneDelegate.swift in Sources */,
+				3DCD684B24486ECA00F55D3E /* CitiesListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +436,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCD68632449BCF700F55D3E /* APIRequestTests.swift in Sources */,
 				3DCD681E244867EE00F55D3E /* UrbanSoochiTests.swift in Sources */,
+				3DCD68682449BD2F00F55D3E /* CityListRequestTests.swift in Sources */,
+				3DCD686C2449BD4F00F55D3E /* CitiesListViewModelTests.swift in Sources */,
+				3DCD68652449BD0F00F55D3E /* APIRequestManagetTests.swift in Sources */,
+				3DCD686E2449CC4200F55D3E /* MockCityListRequest.swift in Sources */,
+				3DD13400244C50F10067182D /* Extensions+Tests.swift in Sources */,
+				3DF5683E244B6F8D005A711B /* NetworkErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,12 +610,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FW9AJ8JAC6;
-				INFOPLIST_FILE = UrbanSoochi/Info.plist;
+				INFOPLIST_FILE = /Users/vinayak.gh/Documents/UrbanSoochi/UrbanSoochi/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hejibVinayak.AngalaBasicsDebugger.UrbanSoochi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejibVinayak.UrbanSoochi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,12 +628,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FW9AJ8JAC6;
-				INFOPLIST_FILE = UrbanSoochi/Info.plist;
+				INFOPLIST_FILE = /Users/vinayak.gh/Documents/UrbanSoochi/UrbanSoochi/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hejibVinayak.AngalaBasicsDebugger.UrbanSoochi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejibVinayak.UrbanSoochi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
