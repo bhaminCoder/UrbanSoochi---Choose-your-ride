@@ -29,7 +29,6 @@
 		3DD133FC244C50350067182D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD133FB244C50350067182D /* Extensions.swift */; };
 		3DD13400244C50F10067182D /* Extensions+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD133FF244C50F10067182D /* Extensions+Tests.swift */; };
 		3DD13402244C713B0067182D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD13401244C713B0067182D /* City.swift */; };
-		3DF5683A244B4DDF005A711B /* String+UrbanSoochiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF56839244B4DDF005A711B /* String+UrbanSoochiTests.swift */; };
 		3DF5683C244B6BA9005A711B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5683B244B6BA9005A711B /* NetworkError.swift */; };
 		3DF5683E244B6F8D005A711B /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +79,6 @@
 		3DD133FB244C50350067182D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3DD133FF244C50F10067182D /* Extensions+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Tests.swift"; sourceTree = "<group>"; };
 		3DD13401244C713B0067182D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		3DF56839244B4DDF005A711B /* String+UrbanSoochiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UrbanSoochiTests.swift"; sourceTree = "<group>"; };
 		3DF5683B244B6BA9005A711B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkErrorTests.swift; path = "../Network Manager/NetworkErrorTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */,
-				3DF56839244B4DDF005A711B /* String+UrbanSoochiTests.swift */,
 				3DD133FF244C50F10067182D /* Extensions+Tests.swift */,
 			);
 			path = Utilities;
@@ -441,7 +438,6 @@
 			files = (
 				3DCD68632449BCF700F55D3E /* APIRequestTests.swift in Sources */,
 				3DCD681E244867EE00F55D3E /* UrbanSoochiTests.swift in Sources */,
-				3DF5683A244B4DDF005A711B /* String+UrbanSoochiTests.swift in Sources */,
 				3DCD68682449BD2F00F55D3E /* CityListRequestTests.swift in Sources */,
 				3DCD686C2449BD4F00F55D3E /* CitiesListViewModelTests.swift in Sources */,
 				3DCD68652449BD0F00F55D3E /* APIRequestManagetTests.swift in Sources */,
