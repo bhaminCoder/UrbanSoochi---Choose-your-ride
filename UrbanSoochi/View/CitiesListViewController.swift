@@ -147,7 +147,7 @@ extension CitiesListViewController: UITableViewDataSource {
         }
         let countries = citiesGroupedByCountries.countryNames
         let country = countries[section]
-        let cities = citiesGroupedByCountries.groupedCountriesAndCitiesGrouped[country]
+        let cities = citiesGroupedByCountries.groupedCountriesAndCities[country]
         return cities?.count ?? 0
     }
 
@@ -165,7 +165,7 @@ extension CitiesListViewController: UITableViewDataSource {
 
         if let citiesGroupedByCountries = self.citiesGroupedByCountries {
             let country = citiesGroupedByCountries.countryNames[indexPath.section]
-            let cities = citiesGroupedByCountries.groupedCountriesAndCitiesGrouped[country]
+            let cities = citiesGroupedByCountries.groupedCountriesAndCities[country]
             if let cities = cities {
                 cell.textLabel?.text = cities[indexPath.row].name
             }

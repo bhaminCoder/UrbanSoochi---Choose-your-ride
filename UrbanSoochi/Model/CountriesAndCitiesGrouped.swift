@@ -13,5 +13,5 @@ typealias CitiesGroupedByCountry = [String: [City]]
 struct CountriesAndCitiesGrouped {
     var cities: [City]
     var countryNames: [String]
-    var groupedCountriesAndCitiesGrouped: CitiesGroupedByCountry
+    var groupedCountriesAndCities: CitiesGroupedByCountry
 }

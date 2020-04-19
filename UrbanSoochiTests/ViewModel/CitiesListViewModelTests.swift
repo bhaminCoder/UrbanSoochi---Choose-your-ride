@@ -36,7 +36,7 @@ class CitiesListViewModelTests: XCTestCase {
     func testForGetListOfCitiesForSuccessfulCompletion() {
         self.viewModel?.getListOfCities(request: self.mockRequest!, completion: { (success, error) in
             XCTAssertTrue(success)
-            XCTAssertNotNil(self.viewModel?.citiesGroupedByCountries?.groupedCountriesAndCitiesGrouped)
+            XCTAssertNotNil(self.viewModel?.citiesGroupedByCountries?.groupedCountriesAndCities)
             XCTAssertNil(error)
         })
     }
@@ -67,7 +67,7 @@ class CitiesListViewModelTests: XCTestCase {
         let citiesGroupedByCountries = self.viewModel?.groupCitiesData(cities!)
 
         let mockGroupedCitiesAndCountries = citiesGroupedByCountries?.cities.sortedByName.groupedByCountry
-        let citiesWithCountry = citiesGroupedByCountries?.groupedCountriesAndCitiesGrouped
+        let citiesWithCountry = citiesGroupedByCountries?.groupedCountriesAndCities
 
         XCTAssertNotNil(mockGroupedCitiesAndCountries)
         XCTAssertNotNil(citiesWithCountry)

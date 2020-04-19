@@ -53,8 +53,9 @@ class CitiesListViewModel {
         if !cities.isEmpty {
             let citiesSorted = self.validSortedCities(cities)
             let countryNames = citiesSorted.groupedByCountry.sortedKeyPaths
-            return CountriesAndCitiesGrouped(cities: citiesSorted, countryNames: countryNames,
-                                                groupedCountriesAndCitiesGrouped: citiesSorted.groupedByCountry)
+            return CountriesAndCitiesGrouped(cities: citiesSorted,
+                                             countryNames: countryNames,
+                                                groupedCountriesAndCities: citiesSorted.groupedByCountry)
         }
         return nil
     }
@@ -96,15 +97,15 @@ class CitiesListViewModel {
     func filterBasedOnCountryNameIfExists(forKey searchKey: String) -> CountriesAndCitiesGrouped? {
         guard let citiesGroupedByCountries = self.citiesGroupedByCountries else { return nil}
 
-        let groupedCountriesAndCitiesGroupedFiltered = citiesGroupedByCountries.groupedCountriesAndCitiesGrouped.filter({
+        let filteredGroup = citiesGroupedByCountries.groupedCountriesAndCities.filter({
             (countryName, _) in
             return searchKey.isASubSetOf(givenText: countryName)
         })
 
-        guard !groupedCountriesAndCitiesGroupedFiltered.isEmpty else { return nil }
+        guard !filteredGroup.isEmpty else { return nil }
         return CountriesAndCitiesGrouped(cities: citiesGroupedByCountries.cities,
-                                   countryNames: groupedCountriesAndCitiesGroupedFiltered.sortedKeyPaths,
-                              groupedCountriesAndCitiesGrouped: groupedCountriesAndCitiesGroupedFiltered)
+                                   countryNames: filteredGroup.sortedKeyPaths,
+                              groupedCountriesAndCities: filteredGroup)
     }
 }
 
