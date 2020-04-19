@@ -82,7 +82,7 @@
 		3DD13401244C713B0067182D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3DF56839244B4DDF005A711B /* String+UrbanSoochiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UrbanSoochiTests.swift"; sourceTree = "<group>"; };
 		3DF5683B244B6BA9005A711B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkErrorTests.swift; path = "../Network Manager/NetworkErrorTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,6 @@
 			children = (
 				3DCD68622449BCF700F55D3E /* APIRequestTests.swift */,
 				3DCD68642449BD0F00F55D3E /* APIRequestManagetTests.swift */,
-				3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -261,6 +260,7 @@
 		3DF56838244B4DC7005A711B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3DF5683D244B6F8D005A711B /* NetworkErrorTests.swift */,
 				3DF56839244B4DDF005A711B /* String+UrbanSoochiTests.swift */,
 				3DD133FF244C50F10067182D /* Extensions+Tests.swift */,
 			);
