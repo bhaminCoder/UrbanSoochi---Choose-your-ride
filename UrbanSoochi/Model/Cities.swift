@@ -16,3 +16,5 @@ struct City: Codable {
     var name: String?
     var country: String?
 }
+
+// A test comment to test OpenAI PR reviewer
