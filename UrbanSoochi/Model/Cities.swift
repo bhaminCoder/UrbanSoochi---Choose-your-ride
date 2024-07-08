@@ -16,3 +16,7 @@ struct City: Codable {
     var name: String?
     var country: String?
 }
+
+struct Model {
+    var name: String?
+}
