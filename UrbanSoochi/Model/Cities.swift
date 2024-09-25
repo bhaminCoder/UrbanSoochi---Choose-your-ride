@@ -15,6 +15,11 @@ struct Cities: Codable {
 struct City: Codable {
     var name: String?
     var country: String?
-}
 
-struct
+    func testAI() {
+        let items: [Int] = []
+        if items.count > 0 {
+            return
+        }
+    }
+}
