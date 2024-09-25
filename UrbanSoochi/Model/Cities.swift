@@ -23,3 +23,5 @@ struct City: Codable {
         }
     }
 }
+
+// A test comment to test OpenAI PR reviewer
