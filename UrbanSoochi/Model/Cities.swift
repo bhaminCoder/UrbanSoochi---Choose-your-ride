@@ -16,8 +16,10 @@ struct City: Codable {
     var name: String?
     var country: String?
 
-    func toTestAI() {
-        let items = [1, 2, 3, 4, 5, 6, 7]
-        var new items = items.filter{$0 == 6}
+    func testAI() {
+        let items: [Int] = []
+        if items.count > 0 {
+            return
+        }
     }
 }
