@@ -2,26 +2,21 @@ name: UrbanSoochi---Choose-your-ride
 
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
-
-permissions:
-  contents: write
-  pull-requests: write
-
+    types: [opened, reopened, ready_for_review]
+  issue_comment:
 jobs:
-  review:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    name: Run pr agent on every pull request, respond to user comments
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: UrbanSoochi---Choose-your-ride
-        uses: bhaminCoder/UrbanSoochi---Choose-your-ride/.github/workflows/main.yml@master
-  # Replace with the actual tag or SHA
-        with:
+      - name: PR Agent action step
+        id: pragent
+        uses: Codium-ai/pr-agent@main
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_MODEL: "gpt-4"  # Optional: defaults to "gpt-4"
-          exclude: "**/*.json, **/*.md"  # Optional: exclude patterns separated by commas
